@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fekara Circle Layout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">WA<span>CHAM</span></div>
+    <nav>
+      <a href="#">Features</a>
+      <a href="#">Pricing</a>
+      <a href="#">Free Registration</a>
+      <a href="#">Partners</a>
+      <a href="#">Contact</a>
+      <a href="#">Login</a>
+    </nav>
+    <button class="register">Free Registration</button>
+  </header>
+
+  <section class="main">
+    <div class="left">
+      <h1>School Management Software</h1>
+      <p>
+        Free School Software to manage your school as you want, starting from admissions to attendance and exams to result cards.
+      </p>
+      <div class="buttons">
+        <button onclick="signUp()">Sign Up</button>
+        <button onclick="startFree()">Start Using FREE</button>
+      </div>
+    </div>
+
+    <div class="circle-container">
+      <img src="assets/computer.png" alt="Computer" class="center-image" />
+      <a href="admissions.html" class="circle-icon" style="--i:0;">📋</a>
+      <a href="attendance.html" class="circle-icon" style="--i:1;">📊</a>
+      <a href="library.html" class="circle-icon" style="--i:2;">📚</a>
+      <a href="teachers.html" class="circle-icon" style="--i:3;">🧑‍🏫</a>
+      <a href="messages.html" class="circle-icon" style="--i:4;">💬</a>
+      <a href="exams.html" class="circle-icon" style="--i:5;">📝</a>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

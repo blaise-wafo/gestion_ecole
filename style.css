@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0071bc;
+    color: white;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #004b8a;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .logo span {
+    color: orange;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .register {
+    background: orange;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .left {
+    max-width: 40%;
+  }
+  
+  .buttons button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buttons button:first-child {
+    background: orange;
+    color: white;
+  }
+  .buttons button:last-child {
+    background: white;
+    color: #0071bc;
+  }
+  
+  .circle-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin-top: 20px;
+  }
+  
+  .center-image {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  .circle-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: white;
+    color: #0071bc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    text-decoration: none;
+    transition: transform 0.3s;
+  }
+  
+  .circle-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  .circle-icon:nth-child(n+2) {
+    /* position icons in a circle */
+    top: calc(50% + 120px * sin(60deg * var(--i)));
+    left: calc(50% + 120px * cos(60deg * var(--i)));
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Fallback using JS-compatible calc with trigonometry */
+  .circle-icon:nth-child(n+2) {
+    transform: translate(-50%, -50%) rotate(calc(var(--i) * 60deg)) translateX(120px) rotate(calc(-1 * var(--i) * 60deg));
+  }
+  
+
+
+
