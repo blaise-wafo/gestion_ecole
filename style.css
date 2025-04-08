@@ -3,116 +3,222 @@ body {
     font-family: Arial, sans-serif;
     background: #0071bc;
     color: white;
-  }
-  
-  header {
+}
+
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 2rem 4rem;
     background-color: #004b8a;
-  }
-  
-  .logo {
-    font-size: 24px;
+    flex-wrap: wrap; /* Ajouté pour une meilleure organisation sur petits écrans */
+}
+
+.logo {
+    font-size: 2rem;
     font-weight: bold;
-  }
-  .logo span {
+}
+
+.logo span {
     color: orange;
-  }
-  
-  nav a {
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permet aux liens de se réorganiser sur petits écrans */
+}
+
+nav a {
     color: white;
-    margin: 0 10px;
+    margin: 0 1rem;
     text-decoration: none;
-  }
-  
-  .register {
+    font-size: 1rem;
+}
+
+.register {
     background: orange;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 1rem 2rem;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .main {
+}
+
+.main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 40px;
+    padding: 4rem;
     flex-wrap: wrap;
-  }
-  
-  .left {
+    gap: 2rem; /* Ajouté pour espacer les éléments */
+}
+
+.left {
     max-width: 40%;
-  }
-  
-  .buttons button {
-    margin-right: 10px;
-    padding: 10px 15px;
+    text-align: center;
+}
+
+.buttons button {
+    margin-right: 1rem;
+    padding: 1rem 2rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .buttons button:first-child {
+    font-size: 1rem;
+}
+
+.buttons button:first-child {
     background: orange;
     color: white;
-  }
-  .buttons button:last-child {
+}
+
+.buttons button:last-child {
     background: white;
     color: #0071bc;
-  }
-  
-  .circle-container {
+}
+
+.circle-container {
     position: relative;
-    width: 400px;
-    height: 400px;
-    margin-top: 20px;
-  }
-  
-  .center-image {
-    width: 150px;
+    width: 35vw;
+    height: 35vw;
+    max-width: 400px;
+    max-height: 400px;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-image {
+    width: 10rem;
     height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-  }
-  
-  .circle-icon {
+}
+
+.circle-icon {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 6rem;
+    height: 6rem;
     background: white;
     color: #0071bc;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 2rem;
     text-decoration: none;
     transition: transform 0.3s;
-  }
-  
-  .circle-icon:hover {
+}
+
+.circle-icon:hover {
     transform: scale(1.2);
-  }
-  
-  .circle-icon:nth-child(n+2) {
+}
+
+.circle-icon:nth-child(n+2) {
     /* position icons in a circle */
-    top: calc(50% + 120px * sin(60deg * var(--i)));
-    left: calc(50% + 120px * cos(60deg * var(--i)));
+    top: calc(50% + 12vw * sin(60deg * var(--i)));
+    left: calc(50% + 12vw * cos(60deg * var(--i)));
     transform: translate(-50%, -50%);
-  }
-  
-  /* Fallback using JS-compatible calc with trigonometry */
-  .circle-icon:nth-child(n+2) {
-    transform: translate(-50%, -50%) rotate(calc(var(--i) * 60deg)) translateX(120px) rotate(calc(-1 * var(--i) * 60deg));
-  }
-  
+}
 
+/* Fallback using JS-compatible calc with trigonometry */
+.circle-icon:nth-child(n+2) {
+    transform: translate(-50%, -50%) rotate(calc(var(--i) * 60deg)) translateX(12vw) rotate(calc(-1 * var(--i) * 60deg));
+}
 
+/* Media Queries for better responsiveness */
 
+/* Mobile devices */
+@media (max-width: 768px) {
+    header {
+        padding: 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .register {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .main {
+        padding: 2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left {
+        max-width: 100%;
+    }
+
+    .circle-container {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .center-image {
+        width: 8rem;
+    }
+
+    .circle-icon {
+        width: 5rem;
+        height: 5rem;
+        font-size: 1.5rem;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    nav a {
+        margin: 0 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .register {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .main {
+        padding: 1.5rem;
+        flex-direction: column;
+    }
+
+    .left {
+        max-width: 100%;
+    }
+
+    .circle-container {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .center-image {
+        width: 6rem;
+    }
+
+    .circle-icon {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.2rem;
+    }
+}
